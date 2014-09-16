@@ -14,3 +14,7 @@ hs_err_pid*
 # project specific
 bin/
 dump/
+.gradle/
+.settings/
+.gradle
+.settings
