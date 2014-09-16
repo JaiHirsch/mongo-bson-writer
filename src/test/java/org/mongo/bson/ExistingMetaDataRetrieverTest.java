@@ -1,7 +1,5 @@
 package org.mongo.bson;
 
-import static org.junit.Assert.*;
-
 import java.net.UnknownHostException;
 
 import org.junit.Test;

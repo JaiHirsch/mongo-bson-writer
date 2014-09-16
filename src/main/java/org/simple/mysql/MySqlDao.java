@@ -54,11 +54,10 @@ public class MySqlDao implements Closeable {
       BasicDBList rtn = new BasicDBList();
       Statement st = conn.createStatement();
       String query = "SHOW INDEX FROM %s";
-      System.out.println("schema: " + schema + " tablename:" + tableName);
       ResultSet rs = st.executeQuery(String.format(query, tableName));
       while (rs.next()) {
          MetaData md = new MetaData(1, rs.getString("COLUMN_NAME"), 1,
-               rs.getString("COLUMN_NAME"), schema + "." + tableName);
+               rs.getString("COLUMN_NAME")+"_", schema + "." + tableName);
          rtn.add(md.getMetaData());
       }
       return rtn;
